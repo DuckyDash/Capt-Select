@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
+  --color-brand-panel: var(--brand-panel);
+  --color-brand-panel-border: var(--brand-panel-border);
+  --color-brand-accent: var(--brand-accent);
+}
+
+:root {
+  /* Light mode colors: white/light gray with black/dark slate accents */
+  --brand-bg: #f8fafc; /* Slate 50 */
+  --brand-text: #0f172a; /* Slate 900 */
+  --brand-muted: #64748b; /* Slate 500 */
+  --brand-border: #e2e8f0; /* Slate 200 */
+  --brand-panel: rgba(255, 255, 255, 0.75); /* White glass */
+  --brand-panel-border: rgba(15, 23, 42, 0.08);
+  --brand-glow: rgba(15, 23, 42, 0.03);
+  
+  --brand-accent: #0f172a; /* Slate 900 */
+  --brand-accent-light: rgba(15, 23, 42, 0.05);
+  --brand-accent-hover: #1e293b;
+  --brand-accent-text: #0f172a;
+  --brand-accent-border: rgba(15, 23, 42, 0.1);
+}
+
+.dark {
+  /* Dark mode colors: black/deep dark blue with white/light gray accents */
+  --brand-bg: #0b0f19;
+  --brand-text: #f8fafc;
+  --brand-muted: #94a3b8;
+  --brand-border: #1e293b;
+  --brand-panel: rgba(17, 24, 39, 0.7);
+  --brand-panel-border: rgba(255, 255, 255, 0.08);
+  --brand-glow: rgba(255, 255, 255, 0.05);
+
+  --brand-accent: #f8fafc;
+  --brand-accent-light: rgba(248, 250, 252, 0.1);
+  --brand-accent-hover: #e2e8f0;
+  --brand-accent-text: #f8fafc;
+  --brand-accent-border: rgba(248, 250, 252, 0.15);
+}
+
+/* Base style resets and custom enhancements */
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dynamic custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+  border-radius: 9999px;
+  border: 2px solid var(--brand-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-muted);
+}
+
+/* Glow effects */
+.glow-indigo {
+  box-shadow: 0 0 40px -10px var(--brand-glow);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-danger {
+  box-shadow: 0 0 40px -10px rgba(239, 68, 68, 0.15);
+}
+
+.glow-warning {
+  box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.15);
+}
+
+.glow-success {
+  box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.15);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--brand-panel);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--brand-panel-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}

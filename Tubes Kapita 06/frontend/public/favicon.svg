@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <!-- Rounded background container matching the theme -->
+  <rect width="48" height="48" rx="12" fill="#f8fafc" />
+  
+  <!-- Centered Shield Path -->
+  <g transform="translate(8, 8) scale(1.3333)">
+    <path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
